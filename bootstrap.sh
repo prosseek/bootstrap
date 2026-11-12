@@ -23,7 +23,11 @@ log() { echo "==> $*"; }
 die() { echo "ERROR: $*" >&2; exit 1; }
 
 # The key name on GitHub is derived from the hostname (unique per machine)
-machine_name() { hostname -s; }
+machine_name() {
+    local n="${MACHINE_NAME:-$(uname -n | cut -d. -f1)}"
+    [ -n "$n" ] && [ "$n" != "localhost" ] || { echo "Set MACHINE_NAME=<name>" >&2; exit 1; }
+    echo "$n"
+}
 
 require_token() {
     [ -n "${GH_TOKEN:-}" ] || die "GH_TOKEN is empty.
