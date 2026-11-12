@@ -10,7 +10,7 @@
 set -euo pipefail
 
 ACCOUNT="prosseek"
-KEY="$HOME/.ssh/id_ed25519_prosseek"
+KEY="$HOME/.ssh/id_ed25519_$ACCOUNT"
 REPO_URL="git@github.com:$ACCOUNT/setup.git"
 TARGET="$HOME/github/$ACCOUNT/setup"
 API="https://api.github.com/user/keys"
