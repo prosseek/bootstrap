@@ -7,6 +7,19 @@
 #
 # GH_TOKEN: prosseek's GitHub token with the "admin:public_key" scope.
 # It is only used to register this machine's SSH key on GitHub.
+#
+# Notes:
+#   - Meant for a brand-new machine, but safe to re-run: an existing key is
+#     reused, and GitHub keys with this machine's name or this exact public key
+#     are deleted and registered again.
+#   - Do NOT delete ~/.ssh to retry. It would also remove authorized_keys (SSH
+#     login to a server), the other accounts' keys and ~/.ssh/config.
+#     To force a new key, remove only this one: rm ~/.ssh/id_ed25519_prosseek*
+#   - The user's git config is ignored (GIT_CONFIG_GLOBAL below), so url.insteadOf
+#     rules such as git@github.com:prosseek/ -> git@prosseek: (an ssh host alias
+#     that may not exist yet) cannot break the clone.
+#   - To test the fresh-machine condition on a used machine:
+#       mv ~/.config/git ~/.config/git.bak   # restore it afterwards
 set -euo pipefail
 
 ACCOUNT="prosseek"
@@ -18,6 +31,10 @@ TOKEN_URL="https://github.com/settings/tokens/new?scopes=admin:public_key&descri
 
 SSH_CMD="ssh -i $KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
 export GIT_SSH_COMMAND="$SSH_CMD"
+# Ignore the user's/system git config (e.g. url.insteadOf rewrites to an ssh host alias
+# like "prosseek") so bootstrap always talks to github.com with its own key.
+export GIT_CONFIG_GLOBAL=/dev/null
+export GIT_CONFIG_NOSYSTEM=1
 
 log() { echo "==> $*"; }
 die() { echo "ERROR: $*" >&2; exit 1; }
@@ -42,7 +59,13 @@ github_api() {
 }
 
 can_access_repo() {
-    git ls-remote "$REPO_URL" > /dev/null 2>&1
+    command -v git > /dev/null || die "git is not installed."
+    git ls-remote "$REPO_URL" > /dev/null 2> "${TMPDIR:-/tmp}/bootstrap_ls_remote.err"
+}
+
+show_access_error() {
+    echo "--- git ls-remote error ---" >&2
+    cat "${TMPDIR:-/tmp}/bootstrap_ls_remote.err" >&2 || true
 }
 
 ensure_key() {
@@ -56,14 +79,19 @@ ensure_key() {
     ssh-keygen -q -t ed25519 -N "" -C "$(machine_name)" -f "$KEY"
 }
 
-# Delete keys on GitHub that have this machine's name (left over from before a reformat)
+# Delete keys on GitHub that either have this machine's name (left over from
+# before a reformat) or contain this exact public key (registered under another title).
+# Otherwise GitHub rejects the registration with 422 "key is already in use".
 delete_old_keys() {
-    local name ids id
+    local name blob ids id
     name="$(machine_name)"
+    blob="$(awk '{ print $2 }' "$KEY.pub")"
     ids="$(github_api "$API?per_page=100" \
-        | awk -v t="$name" '
+        | awk -v t="$name" -v b="$blob" '
             /"id":/ { id = $2; gsub(/[^0-9]/, "", id) }
-            $1 == "\"title\":" && $2 == ("\"" t "\",") { print id }')" \
+            $1 == "\"key\":" && index($0, b) { print id }
+            $1 == "\"title\":" && $2 == ("\"" t "\",") { print id }' \
+        | sort -u)" \
         || die "GitHub API call failed. Check the token and its scope (admin:public_key)."
     for id in $ids; do
         log "Deleting old GitHub key #$id ($name)"
@@ -75,9 +103,16 @@ register_key() {
     local name
     name="$(machine_name)"
     log "Registering key on GitHub as '$name'"
-    github_api -X POST "$API" \
-        -d "{\"title\":\"$name\",\"key\":\"$(cat "$KEY.pub")\"}" > /dev/null \
-        || die "Key registration failed (is this public key already used by another account?)."
+    local resp code
+    resp="$(curl -sS -w '\n%{http_code}' -X POST "$API" \
+        -H "Authorization: Bearer $GH_TOKEN" \
+        -H "Accept: application/vnd.github+json" \
+        -d "{\"title\":\"$name\",\"key\":\"$(cat "$KEY.pub")\"}")"
+    code="${resp##*$'\n'}"
+    if [ "$code" != "201" ]; then
+        echo "${resp%$'\n'*}" >&2
+        die "Key registration failed (HTTP $code). If 'key is already in use': the key is on another GitHub account or is a repo deploy key. Remove it there, or delete $KEY* and run again to create a new key."
+    fi
 }
 
 ensure_github_access() {
@@ -88,7 +123,15 @@ ensure_github_access() {
     require_token
     delete_old_keys
     register_key
-    can_access_repo || die "Still cannot access $REPO_URL. Wait a few seconds and run again."
+    # A newly registered key can take a few seconds to become active on GitHub
+    local i
+    for i in 1 2 3 4 5 6; do
+        can_access_repo && return
+        log "Waiting for GitHub to activate the key ($i/6)"
+        sleep 3
+    done
+    show_access_error
+    die "Still cannot access $REPO_URL. Check: $SSH_CMD -T git@github.com"
 }
 
 clone_setup() {
