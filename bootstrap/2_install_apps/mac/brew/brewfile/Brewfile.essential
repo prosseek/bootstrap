@@ -34,8 +34,9 @@ cask "hookmark"   # Link and retrieve key information
 
 ## Brew
 cask "caskhub"   # Native GUI for Homebrew casks
-cask "cakebrew"
 cask "applite"    # User-friendly GUI app for Homebrew
+cask "cork"       # license -> sm.cho@mac.com 
+cask "homebrew-app"
 
 ## Image
 cask "clop"
