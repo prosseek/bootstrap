@@ -23,7 +23,7 @@ brew "direnv" # Load/unload environment variables based on $PWD
 ## Network
 brew "wget"   # m4 # Internet file retriever
 brew "tmux"   # Terminal multiplexer
-cask transmit
+cask "transmit"
 
 ## Computer Management
 brew "duti"
