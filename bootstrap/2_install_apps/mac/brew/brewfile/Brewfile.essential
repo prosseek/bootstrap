@@ -66,6 +66,10 @@ cask "neovide-app"   # Neovim Client
 cask "visual-studio-code"
 cask "obsidian"
 
+## GIT
+cask "tower"
+cask "beyond-compare"
+
 ## LLM
 cask "perplexity"   # AI-powered answer engine with Personal Computer agent
 cask "antigravity"  # Agent orchestration platform
