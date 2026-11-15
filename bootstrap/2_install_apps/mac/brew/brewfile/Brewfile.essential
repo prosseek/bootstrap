@@ -6,7 +6,7 @@
 ## Mac 
 brew "mas"
 brew "dockutil"
-brew "devonthink"
+cask "devonthink"
 
 ## Lang
 brew "python@3.14"
