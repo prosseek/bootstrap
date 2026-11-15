@@ -5,6 +5,7 @@
 
 ## Mac 
 brew "mas"
+brew "dockutil"
 
 ## Lang
 brew "python@3.14"
