@@ -6,7 +6,7 @@
 1. Clop
 2. Screenshot X
 
-## ~/github/prosseek/setup/OS_specific/Mac
+## ~/github/prosseek/setup_mac
 
 1. Keyboard maestro
   - brew --cask
@@ -27,7 +27,7 @@
 
 ```bash
 ls -la ~/Library/Application\ Support/espanso
-lrwxr-xr-x@ 1 chos5  2062660934  66 Aug  9 21:25 /Users/chos5/Library/Application Support/espanso -> /Users/chos5/github/prosseek/setup/OS_specific/Mac/espanso/espanso
+lrwxr-xr-x@ 1 chos5  2062660934  66 Aug  9 21:25 /Users/chos5/Library/Application Support/espanso -> /Users/chos5/github/prosseek/setup_mac/espanso/espanso
 ```
 
 ## AI
