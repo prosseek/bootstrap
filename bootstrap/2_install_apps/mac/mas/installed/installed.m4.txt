@@ -1,0 +1,60 @@
+# installed.m4.txt -- App Store apps on m4, by category. Made by list.sh.
+# Copy the lines you want into masfile/Masfile.<group>, then:  bash install.sh <group>
+
+## Business
+1276493162  reMarkable
+1295203466  Windows App
+
+## Developer Tools
+1554235898  Peek
+1006087419  SnippetsLab
+497799835  Xcode
+
+## Finance
+1280542517  Chronicle Pro
+
+## Productivity
+1091189122  Bear
+1024640650  CotEditor
+1487937127  Craft
+409183694  Keynote
+6449926189  MagicGlance
+890031187  Marked 2
+462058435  Microsoft Excel
+462062816  Microsoft PowerPoint
+462054704  Microsoft Word
+409203825  Numbers
+823766827  OneDrive
+409201541  Pages
+6738622779  Readest
+692867256  Simplenote
+1528890965  TextSniper
+904280696  Things
+1327661892  Xmind
+457622435  Yoink
+
+## Reference
+1023251042  AladinEbook
+302584613  Kindle
+
+## Social Networking
+869223134  KakaoTalk
+
+## Utilities
+937984704  Amphetamine
+411643860  DaisyDisk
+455970963  Disk Doctor
+686428787  Duplicate Detective
+1643144565  FastestVPN
+402569179  Find Any File
+6698876601  Folder Preview
+1151320968  Furiganify
+1111570163  GrandPerspective
+470158793  Keka
+6739955340  Markdown Preview
+1064959555  New File Menu
+1494992020  Supernote Partner
+1450874784  Transporter
+
+## Word Games
+6449839158  Lingopie

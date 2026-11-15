@@ -1,0 +1,10 @@
+# microsoft -- App Store apps (Microsoft)
+# Install only this file:  bash install.sh microsoft
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+462058435  Microsoft Excel
+462062816  Microsoft PowerPoint
+462054704  Microsoft Word
+823766827  OneDrive

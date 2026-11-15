@@ -1,0 +1,8 @@
+# books -- App Store apps (Books)
+# Install only this file:  bash install.sh books
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+1023251042  AladinEbook
+302584613  Kindle

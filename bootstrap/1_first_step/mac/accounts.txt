@@ -1,0 +1,8 @@
+# Google accounts for 4_email.sh, one e-mail address per line.
+# Lines starting with # and empty lines are ignored.
+prosseek@gmail.com
+csmgroup@gmail.com
+mess2makesense@gmail.com
+make2gr@gmail.com
+p4seek@gmail.com
+smcho.at.nku@gmail.com

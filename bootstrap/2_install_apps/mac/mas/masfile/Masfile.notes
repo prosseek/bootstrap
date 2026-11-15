@@ -1,0 +1,19 @@
+# notes -- App Store apps
+# Install only this file:  bash install.sh notes
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+1055511498  Day One
+1435957248  Drafts
+1444383602  Goodnotes
+6458735203  Noteshelf 3
+1441958036  SideNotes
+1398373917  UpNote
+1091189122  Bear
+692867256  Simplenote
+1487937127  Craft
+1006087419  SnippetsLab
+1494992020  Supernote Partner
+1064959555  New File Menu
+1276493162  reMarkable

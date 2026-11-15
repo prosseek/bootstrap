@@ -1,0 +1,17 @@
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"   # mini23
+# Statistics utility to count lines of code
+brew "cloc"   # mini23
+
+# Replacement for Docker Desktop
+cask "orbstack"   # mini23
+
+# 2D and 3D game engine
+cask "godot"   # all
+
+# UI toolkit for building applications for mobile, web and desktop
+cask "flutter"   # m4
+cask "font-jetbrains-mono-nerd-font"   # m4
+cask "font-meslo-lg-nerd-font"   # m4
+cask "font-noto-serif-cjk-jp"   # m4
+

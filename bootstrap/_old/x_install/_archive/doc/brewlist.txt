@@ -1,0 +1,38 @@
+# Fonts
+brew install --cask font-jetbrains-mono-nerd-font
+brew tap homebrew/cask-fonts
+brew install --cask font-meslo-lg-nerd-font
+
+# TMUX
+brew install tmux
+
+# Windows Management
+brew install --cask nikitabobko/tap/aerospace
+
+# VIM
+brew install neovim
+brew install macvim
+brew install --cask macvim-app
+brew install neovim-qt
+
+# EMACS
+brew install --cask emacs
+
+# https://www.youtube.com/watch?v=CbMbGV9GT8I
+# fzf & fd 
+brew install fzf
+brew install fd
+# ZOXIDE - z
+brew install zoxide
+# YAZI
+brew install yazi
+
+# https://www.youtube.com/watch?v=2OHrTQVlRMg
+# eza - better ls
+brew install eza
+# bat - better cat
+brew install bat
+# rg - regular expression
+brew install rg
+brew install entr
+brew install mc

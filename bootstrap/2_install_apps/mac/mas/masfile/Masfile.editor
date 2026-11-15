@@ -1,0 +1,11 @@
+# editor -- App Store apps (Editor)
+# Install only this file:  bash install.sh editor
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+775737590  iA Writer
+1024640650  CotEditor
+1171346381  Easy CSV Editor
+567740330  JSON Editor
+1157491961  PLIST Editor

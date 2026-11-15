@@ -1,0 +1,7 @@
+# social-networking -- App Store apps (Social Networking)
+# Install only this file:  bash install.sh social-networking
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+869223134  KakaoTalk

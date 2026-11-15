@@ -1,0 +1,19 @@
+## Essential
+
+# Web browsers
+visual-studio-code
+
+# System utilities
+hammerspoon
+input-source-pro
+
+# Network tools
+tailscale-app
+
+# Screen savers
+blank-screensaver
+
+# Package managers
+cakebrew
+shortcutdetective
+

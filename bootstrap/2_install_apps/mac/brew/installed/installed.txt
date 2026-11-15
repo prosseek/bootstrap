@@ -1,0 +1,252 @@
+# installed.txt -- Homebrew items of all computers merged (m4, mini23). Made from installed.<computer>.txt.
+# The comment after an item says which computers have it. Copy the lines you want into brewfile/Brewfile.<group>.
+
+## taps (8)
+tap "c0desurfer/tap", trusted: { casks: ["swift-salamander"] }   # mini23
+tap "clojure/tools"   # mini23
+tap "daipeihust/tap"   # m4
+tap "dart-lang/dart"   # mini23
+tap "gromgit/fuse"   # mini23
+tap "nikitabobko/tap"   # all
+tap "osx-cross/avr"   # mini23
+tap "tectiv3/textmate", trusted: { casks: ["textmate"] }   # mini23
+
+## formulae (117)
+# GNU compiler collection for aarch64-elf
+brew "aarch64-elf-gcc"   # mini23
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"   # mini23
+# GNU compiler collection for arm-none-eabi
+brew "arm-none-eabi-gcc"   # mini23
+# Atmel AVR MCU programmer
+brew "avrdude"   # mini23
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"   # all
+
+
+# Dependency manager for Cocoa projects
+brew "cocoapods"   # all
+# Dependency Manager for PHP
+brew "composer"   # m4
+# Distributed, open source, package manager for C/C++
+brew "conan"   # mini23
+# GNU File, Shell, and Text utilities
+brew "coreutils"   # m4
+# Switch your input method through terminal
+brew "daipeihust/tap/im-select", trusted: true   # m4
+
+
+# GNU Emacs text editor
+brew "emacs", link: false   # all
+# Run arbitrary commands when files change
+brew "entr"   # all
+# Modern, maintained replacement for ls
+brew "eza"   # all
+
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"   # m4
+# Command-line fuzzy finder written in Go
+brew "fzf"   # all
+# GitHub command-line tool
+brew "gh"   # all
+# Installer for the general purpose language Haskell
+brew "ghcup"   # mini23
+# Interpreter for PostScript and PDF
+brew "ghostscript"   # all
+# GIF image/animation creator/editor
+brew "gifsicle"   # mini23
+# Distributed revision control system
+brew "git"   # m4
+# Render markdown on the CLI
+brew "glow"   # all
+# GNU implementation of the famous stream editor
+brew "gnu-sed"   # mini23
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"   # mini23
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"   # mini23
+# Open source programming language to build simple/reliable/efficient software
+brew "go"   # all
+
+# OpenType text shaping engine
+brew "harfbuzz"   # mini23
+
+# Configurable static site generator
+brew "hugo"   # m4
+# Verilog simulation and synthesis tool
+brew "icarus-verilog"   # mini23
+
+# Extendable open source continuous integration server
+brew "jenkins-lts"   # mini23
+# New file format for still image compression
+brew "jpeg-xl"   # mini23
+# Statically typed programming language for the JVM
+brew "kotlin"   # mini23
+# Simple terminal UI for git commands
+brew "lazygit"   # m4
+# Graphical front-end for GCC's coverage testing tool (gcov)
+brew "lcov"   # m4
+# Build tool for Clojure
+brew "leiningen"   # all
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"   # mini23
+# LLVM's OpenMP runtime library
+brew "libomp"   # mini23
+# Library for reading RAW files from digital photo cameras
+brew "libraw"   # mini23
+# Library for USB device access
+brew "libusb"   # mini23
+# C library for reading, creating, and modifying zip archives
+brew "libzip"   # mini23
+# Linux virtual machines
+brew "lima"   # all
+# Find what models run on your hardware
+brew "llmfit"   # m4
+# Next-gen compiler infrastructure
+brew "llvm"   # mini23
+# Powerful, lightweight programming language
+brew "lua"   # mini23
+# GUI for vim, made for macOS
+
+
+
+# Show markdown documents on text terminals
+brew "mdcat"   # all
+# CLI for Mermaid library
+brew "mermaid-cli"   # all
+# Terminal-based visual file manager
+brew "midnight-commander"   # all
+# Simple tool to make locally trusted development certificates
+brew "mkcert"   # m4
+# Deep clean and optimize your Mac
+brew "mole"   # all
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
+brew "mongosh"   # mini23
+# Lightweight PDF and XPS viewer
+brew "mupdf"   # m4
+# Open source relational database management system
+brew "mysql", restart_service: :changed   # m4
+# Text-based UI library
+
+# No Nonsense Neovim Client in Rust
+brew "neovide"   # mini23
+# Ambitious Vim-fork focused on extensibility and agility
+
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx"   # all
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"   # all
+# Libraries for security-enabled client and server applications
+brew "nss"   # m4
+# Adds an OCR text layer to scanned PDF files
+brew "ocrmypdf"   # m4
+# OCaml package manager
+brew "opam"   # mini23
+# Development kit for the Java programming language
+brew "openjdk@17"   # mini23
+# Development kit for the Java programming language
+brew "openjdk@21"   # mini23
+# Library for JPEG-2000 image manipulation
+brew "openjpeg"   # mini23
+# Swiss-army knife of markup format conversion
+brew "pandoc"   # all
+# PDF processor written in Go
+brew "pdfcpu"   # m4
+# Reads arbitrary PDF files and generates an XML file readable by Ipe
+brew "pdftoipe"   # mini23
+# General-purpose scripting language
+brew "php@8.4"   # m4
+# Package compiler and linker metadata toolkit
+brew "pkgconf"   # mini23
+# Open source backend for your next project in 1 file
+brew "pocketbase"   # m4
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"   # m4
+# Object-relational database system
+brew "postgresql@16", link: true   # mini23
+# Python version management
+brew "pyenv"   # mini23
+# Pyenv plugin to manage virtualenv
+brew "pyenv-virtualenv"   # mini23
+# Generic machine emulator and virtualizer
+brew "qemu"   # mini23
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"   # m4
+# Ruby version manager
+brew "rbenv"   # all
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"   # all
+# Readline wrapper: adds readline support to tools that lack it
+brew "rlwrap"   # mini23
+# Safe, concurrent, practical language
+brew "rust"   # mini23
+# JVM-based programming language
+brew "scala"   # mini23
+# SOund eXchange: universal sound sample translator
+brew "sox"   # all
+# Version control system designed to be a better CVS
+brew "subversion"   # mini23
+# Waveform viewer, supporting VCD, FST, or GHW format
+brew "surfer"   # mini23
+# ISO/Edinburgh-style Prolog interpreter
+brew "swi-prolog"   # mini23
+# Manipulate and query tags on macOS files
+brew "tag"   # m4
+# OCR (Optical Character Recognition) engine
+brew "tesseract"   # m4
+# Enables extra languages support for Tesseract
+brew "tesseract-lang"   # m4
+# Text interface for Git repositories
+brew "tig"   # m4
+
+# Incremental parsing library
+brew "tree-sitter"   # all
+# Parser generator tool
+brew "tree-sitter-cli"   # all
+
+# Validating, recursive, caching DNS resolver
+brew "unbound"   # all
+
+# Vi 'workalike' with many additional features
+
+# Image format providing lossless and lossy compression for web images
+brew "webp"   # mini23
+
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"   # all
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"   # mini23
+# Shell extension to navigate your filesystem faster
+brew "zoxide"   # all
+
+## casks (40)
+# Enable Windows-like alt-tab
+cask "alt-tab"   # mini23
+
+# Tool to customise input devices and automate computer systems
+cask "bettertouchtool"   # mini23
+
+# Web browser with integrated AI assistant
+cask "comet"   # mini23
+# Browser for SQLite databases
+cask "db-browser-for-sqlite"   # m4
+
+# GNU Emacs text editor
+cask "emacs-app"   # all
+
+# File system integration
+cask "macfuse"   # mini23
+# Visual diff and merge tool
+cask "meld"   # m4
+
+
+# Native screenshots, recording, annotation, and editing from the menu bar
+cask "snapzy"   # all
+
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@21"   # m4
+
+# Management tool for Unity
+cask "unity-hub"   # mini23
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"   # mini23

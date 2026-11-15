@@ -1,0 +1,88 @@
+# installed.mini23.txt -- App Store apps on mini23, by category. Made by list.sh.
+# Copy the lines you want into masfile/Masfile.<group>, then:  bash install.sh <group>
+
+## Business
+699877408  BigHairyGoal
+1276493162  reMarkable
+1295203466  Windows App
+
+## Developer Tools
+1061486140  Code Recipes Pro
+1516894961  Codye
+1171346381  Easy CSV Editor
+841285201  Haskell
+567740330  JSON Editor
+1554235898  Peek
+1157491961  PLIST Editor
+1006087419  SnippetsLab
+475193367  Synalyze It! Pro
+1520333300  Wappalyzer - Technology profiler
+497799835  Xcode
+
+## Education
+1020339980  Explain Everything
+
+## Finance
+1280542517  Chronicle Pro
+
+## Graphics & Design
+1522368690  WebP Converter
+
+## Lifestyle
+1055511498  Day One
+
+## Productivity
+1501563902  Allume
+1091189122  Bear
+417375580  BetterSnapTool
+1024640650  CotEditor
+1487937127  Craft
+1564673279  Docs for Google Docs and Drive
+1435957248  Drafts
+1485052491  Dropzone 4
+1444383602  Goodnotes
+1462114288  Grammarly for Safari
+775737590  iA Writer
+409183694  Keynote
+1527619437  Maccy
+6449926189  MagicGlance
+890031187  Marked 2
+462058435  Microsoft Excel
+462062816  Microsoft PowerPoint
+462054704  Microsoft Word
+6458735203  Noteshelf 3
+409203825  Numbers
+409201541  Pages
+6738622779  Readest
+1441958036  SideNotes
+692867256  Simplenote
+6444322545  SingleFile
+1528890965  TextSniper
+904280696  Things
+1436522307  Transmit
+1398373917  UpNote
+1327661892  Xmind
+457622435  Yoink
+
+## Reference
+1023251042  AladinEbook
+302584613  Kindle
+
+## Social Networking
+869223134  KakaoTalk
+
+## Utilities
+1035236694  Commander One
+1643144565  FastestVPN
+402569179  Find Any File
+6698876601  Folder Preview
+1111570163  GrandPerspective
+1452453066  Hidden Bar
+470158793  Keka
+1416282836  Native SQLite Manager
+1064959555  New File Menu
+6749519388  Outpost
+1494992020  Supernote Partner
+
+## Word Games
+6449839158  Lingopie

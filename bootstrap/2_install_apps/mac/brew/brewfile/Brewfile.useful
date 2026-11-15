@@ -1,0 +1,9 @@
+# Crop PDF files
+brew "briss"   # all
+
+# Markup-based typesetting system
+brew "typst"   # m4
+
+cask "appcleaner"   # m4
+
+

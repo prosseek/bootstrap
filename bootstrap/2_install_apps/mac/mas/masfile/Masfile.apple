@@ -1,0 +1,9 @@
+# apple -- App Store apps (Apple)
+# Install only this file:  bash install.sh apple
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+409183694  Keynote
+409201541  Pages
+409203825  Numbers

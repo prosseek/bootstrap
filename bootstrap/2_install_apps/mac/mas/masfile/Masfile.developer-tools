@@ -1,0 +1,17 @@
+# developer-tools -- App Store apps (Developer Tools)
+# Install only this file:  bash install.sh developer-tools
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+497799835  Xcode
+1554235898  Peek
+
+1061486140  Code Recipes Pro
+1516894961  Codye
+
+841285201  Haskell
+
+475193367  Synalyze It! Pro
+1520333300  Wappalyzer - Technology profiler
+1416282836  Native SQLite Manager

@@ -1,0 +1,8 @@
+# language -- App Store apps (Language)
+# Install only this file:  bash install.sh language
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+1151320968  Furiganify
+6449839158  Lingopie

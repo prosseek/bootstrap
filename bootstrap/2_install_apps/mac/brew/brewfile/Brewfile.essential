@@ -1,0 +1,84 @@
+# essential -- the apps needed right after the first setup
+# Install only this file:  bash install.sh essential
+# ~/github/prosseek/setup/OS_specific/Mac/_readme.md
+# The App Store apps themselves are installed by ../mas.
+
+## Mac 
+brew "mas"
+
+## Lang
+brew "python@3.14"
+brew "uv"   # Extremely fast Python package installer and resolver, written in Rust
+
+## UNIX
+brew "rg"     # better grep
+brew "zoxide" # z/zi -> fzf is needed
+brew "fd"     # fdfind for Linx
+brew "fzf"
+brew "tree"   # Display directories as trees (with optional color/HTML output)
+brew "ncurses"   # mini23
+brew "htop"   # Improved top (interactive process viewer)
+brew "direnv" # Load/unload environment variables based on $PWD
+
+## Network
+brew "wget"   # m4 # Internet file retriever
+brew "tmux"   # Terminal multiplexer
+cask transmit
+
+## Computer Management
+brew "duti"
+cask "alfred"
+cask "mole-app"   # Deep clean, analyze, and optimize app
+cask "hookmark"   # Link and retrieve key information
+
+## Brew
+cask "caskhub"   # Native GUI for Homebrew casks
+cask "cakebrew"
+cask "applite"    # User-friendly GUI app for Homebrew
+
+## Image
+cask "clop"
+brew "imagemagick"   # Tools and libraries to manipulate images in select formats
+
+## Finder
+cask "openinterminal"
+
+## Screen
+cask "cleanshot"
+cask "rectangle-pro"
+
+## Publish
+brew "marp-cli", link: false   # Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images
+brew "graphviz"   # Graph visualization software from AT&T and Bell Labs
+cask "drawio"   # Online diagram software
+cask "typora"   # Configurable document editor that supports Markdown
+
+## Editor
+brew "vim"   # all
+brew "neovim"   # all
+brew "macvim", link: false   # m4
+cask "sublime-text"  # Text editor for code, markup and prose
+cask "macvim-app"    # Text editor
+cask "neovide-app"   # Neovim Client
+cask "visual-studio-code"
+cask "obsidian"
+
+## LLM
+cask "perplexity"   # AI-powered answer engine with Personal Computer agent
+cask "antigravity"  # Agent orchestration platform
+cask "antigravity-ide"   # AI Coding Agent IDE
+cask "claude"
+cask "google-gemini" # Native desktop AI assistant from Google
+cask "ollama-app"    # Get up and running with large language models locally
+
+## Termainal
+cask "ghostty"
+
+## Keyboard
+cask "espanso"
+cask "hammerspoon"   # Desktop automation application
+cask "input-source-pro"   # Tool for multi-language users
+cask "karabiner-elements"   # Keyboard customiser
+
+## Media Player 
+cask "iina"   # Free and open-source media player

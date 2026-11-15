@@ -1,0 +1,194 @@
+# installed.m4.txt -- Homebrew items on m4. Made by list_installed.sh.
+# Copy the lines you want (with their # comment) into brewfile/Brewfile.<group>, then:  bash install.sh <group>
+
+tap "daipeihust/tap"
+tap "nikitabobko/tap"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Crop PDF files
+brew "briss"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# Dependency Manager for PHP
+brew "composer"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
+# Incremental parsing library
+brew "tree-sitter"
+# GNU Emacs text editor
+brew "emacs", link: false
+# Run arbitrary commands when files change
+brew "entr"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
+# Distributed revision control system
+brew "git"
+# Render markdown on the CLI
+brew "glow"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Improved top (interactive process viewer)
+brew "htop"
+# Configurable static site generator
+brew "hugo"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Graphical front-end for GCC's coverage testing tool (gcov)
+brew "lcov"
+# Build tool for Clojure
+brew "leiningen"
+# Linux virtual machines
+brew "lima"
+# Find what models run on your hardware
+brew "llmfit"
+# GUI for vim, made for macOS
+brew "macvim", link: false
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images
+brew "marp-cli", link: false
+# Mac App Store command-line interface
+brew "mas"
+# Show markdown documents on text terminals
+brew "mdcat"
+# CLI for Mermaid library
+brew "mermaid-cli"
+# Terminal-based visual file manager
+brew "midnight-commander"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
+# Deep clean and optimize your Mac
+brew "mole"
+# Lightweight PDF and XPS viewer
+brew "mupdf"
+# Open source relational database management system
+brew "mysql", restart_service: :changed
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Neovim GUI, in Qt
+brew "neovim-qt"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx"
+# Libraries for security-enabled client and server applications
+brew "nss"
+# Adds an OCR text layer to scanned PDF files
+brew "ocrmypdf"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# PDF processor written in Go
+brew "pdfcpu"
+# General-purpose scripting language
+brew "php@8.4"
+# Open source backend for your next project in 1 file
+brew "pocketbase"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Ruby version manager
+brew "rbenv"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# SOund eXchange: universal sound sample translator
+brew "sox"
+# Manipulate and query tags on macOS files
+brew "tag"
+# Enables extra languages support for Tesseract
+brew "tesseract-lang"
+# Text interface for Git repositories
+brew "tig"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
+# Markup-based typesetting system
+brew "typst"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Vi 'workalike' with many additional features
+brew "vim"
+# Internet file retriever
+brew "wget"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Switch your input method through terminal
+brew "daipeihust/tap/im-select", trusted: true
+# Agent orchestration platform
+cask "antigravity"
+# Application uninstaller
+cask "appcleaner"
+# Text, code, and markup editor
+cask "bbedit"
+# Native GUI for Homebrew casks
+cask "caskhub"
+# Browser for SQLite databases
+cask "db-browser-for-sqlite"
+# GNU Emacs text editor
+cask "emacs-app"
+# Cross-platform Text Expander written in Rust
+cask "espanso"
+# UI toolkit for building applications for mobile, web and desktop
+cask "flutter"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-meslo-lg-nerd-font"
+cask "font-noto-serif-cjk-jp"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# 2D and 3D game engine
+cask "godot"
+# Native desktop AI assistant from Google
+cask "google-gemini"
+# Desktop automation application
+cask "hammerspoon"
+# Link and retrieve key information
+cask "hookmark"
+# Free and open-source media player
+cask "iina"
+# Tool for multi-language users
+cask "input-source-pro"
+# Keyboard customiser
+cask "karabiner-elements"
+# Text editor
+cask "macvim-app"
+# Visual diff and merge tool
+cask "meld"
+# Deep clean, analyze, and optimize app
+cask "mole-app"
+# Neovim Client
+cask "neovide-app"
+# Get up and running with large language models locally
+cask "ollama-app"
+# Finder Toolbar app to open the current directory in Terminal or Editor
+cask "openinterminal"
+# Native screenshots, recording, annotation, and editing from the menu bar
+cask "snapzy"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@21"
+# Configurable document editor that supports Markdown
+cask "typora"

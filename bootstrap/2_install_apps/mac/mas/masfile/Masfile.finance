@@ -1,0 +1,7 @@
+# finance -- App Store apps (Finance)
+# Install only this file:  bash install.sh finance
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+1280542517  Chronicle Pro

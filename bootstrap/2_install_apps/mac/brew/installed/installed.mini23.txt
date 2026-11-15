@@ -1,0 +1,234 @@
+# installed.mini23.txt -- Homebrew items on mini23. Made by list_installed.sh.
+# Copy the lines you want (with their # comment) into brewfile/Brewfile.<group>, then:  bash install.sh <group>
+
+tap "c0desurfer/tap", trusted: { casks: ["swift-salamander"] }
+tap "clojure/tools"
+tap "dart-lang/dart"
+tap "gromgit/fuse"
+tap "nikitabobko/tap"
+tap "osx-cross/avr"
+tap "tectiv3/textmate", trusted: { casks: ["textmate"] }
+# GNU compiler collection for aarch64-elf
+brew "aarch64-elf-gcc"
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"
+# GNU compiler collection for arm-none-eabi
+brew "arm-none-eabi-gcc"
+# Library for USB device access
+brew "libusb"
+# Atmel AVR MCU programmer
+brew "avrdude"
+# Text-based UI library
+brew "ncurses"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
+# Crop PDF files
+brew "briss"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"
+# Statistics utility to count lines of code
+brew "cloc"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# Distributed, open source, package manager for C/C++
+brew "conan"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Incremental parsing library
+brew "tree-sitter"
+# GNU Emacs text editor
+brew "emacs"
+# Run arbitrary commands when files change
+brew "entr"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# New file format for still image compression
+brew "jpeg-xl"
+# GitHub command-line tool
+brew "gh"
+# Installer for the general purpose language Haskell
+brew "ghcup"
+# Library for JPEG-2000 image manipulation
+brew "openjpeg"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
+# GIF image/animation creator/editor
+brew "gifsicle"
+# Render markdown on the CLI
+brew "glow"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Improved top (interactive process viewer)
+brew "htop"
+# Verilog simulation and synthesis tool
+brew "icarus-verilog"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Development kit for the Java programming language
+brew "openjdk@21"
+# Extendable open source continuous integration server
+brew "jenkins-lts"
+# Statically typed programming language for the JVM
+brew "kotlin"
+# Build tool for Clojure
+brew "leiningen"
+# LLVM's OpenMP runtime library
+brew "libomp"
+# Library for reading RAW files from digital photo cameras
+brew "libraw"
+# C library for reading, creating, and modifying zip archives
+brew "libzip"
+# Linux virtual machines
+brew "lima"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Powerful, lightweight programming language
+brew "lua"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images
+brew "marp-cli"
+# Mac App Store command-line interface
+brew "mas"
+# Show markdown documents on text terminals
+brew "mdcat"
+# CLI for Mermaid library
+brew "mermaid-cli"
+# Terminal-based visual file manager
+brew "midnight-commander"
+# Deep clean and optimize your Mac
+brew "mole"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
+brew "mongosh"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# No Nonsense Neovim Client in Rust
+brew "neovide"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx"
+# OCaml package manager
+brew "opam"
+# Development kit for the Java programming language
+brew "openjdk@17"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Reads arbitrary PDF files and generates an XML file readable by Ipe
+brew "pdftoipe"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Object-relational database system
+brew "postgresql@16", link: true
+# Python version management
+brew "pyenv"
+# Pyenv plugin to manage virtualenv
+brew "pyenv-virtualenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Generic machine emulator and virtualizer
+brew "qemu"
+# Ruby version manager
+brew "rbenv"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Readline wrapper: adds readline support to tools that lack it
+brew "rlwrap"
+# Safe, concurrent, practical language
+brew "rust"
+# JVM-based programming language
+brew "scala"
+# SOund eXchange: universal sound sample translator
+brew "sox"
+# Version control system designed to be a better CVS
+brew "subversion"
+# Waveform viewer, supporting VCD, FST, or GHW format
+brew "surfer"
+# ISO/Edinburgh-style Prolog interpreter
+brew "swi-prolog"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# Vi 'workalike' with many additional features
+brew "vim"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Enable Windows-like alt-tab
+cask "alt-tab"
+# AI Coding Agent IDE
+cask "antigravity-ide"
+# User-friendly GUI app for Homebrew
+cask "applite"
+# Tool to customise input devices and automate computer systems
+cask "bettertouchtool"
+# Native GUI for Homebrew casks
+cask "caskhub"
+# Web browser with integrated AI assistant
+cask "comet"
+# Online diagram software
+cask "drawio"
+# GNU Emacs text editor
+cask "emacs-app"
+# Cross-platform Text Expander written in Rust
+cask "espanso"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# 2D and 3D game engine
+cask "godot"
+# Desktop automation application
+cask "hammerspoon"
+# Free and open-source media player
+cask "iina"
+# Tool for multi-language users
+cask "input-source-pro"
+# Keyboard customiser
+cask "karabiner-elements"
+# File system integration
+cask "macfuse"
+# Text editor
+cask "macvim-app"
+# Deep clean, analyze, and optimize app
+cask "mole-app"
+# Finder Toolbar app to open the current directory in Terminal or Editor
+cask "openinterminal"
+# Replacement for Docker Desktop
+cask "orbstack"
+# AI-powered answer engine with Personal Computer agent
+cask "perplexity"
+# Native screenshots, recording, annotation, and editing from the menu bar
+cask "snapzy"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Management tool for Unity
+cask "unity-hub"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"

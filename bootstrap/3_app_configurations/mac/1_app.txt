@@ -1,0 +1,37 @@
+1. Obsidian
+  - Use mss2ms/mss2ms for the repository
+
+## brew + license key
+
+1. Clop
+2. Screenshot X
+
+## ~/github/prosseek/setup/OS_specific/Mac
+
+1. Keyboard maestro
+  - brew --cask
+  - Register
+  - Import > Import Macros Safely
+  - enable keyboard maestro ![keyboard_maestro.webp]
+  - main password easy input
+
+2. Alfred
+  - brew --cask
+  - Set the Syncing folder
+  - Set the start "cmd-cmd"
+
+3. Espanso
+  - brew --cask
+  - However, check if the link is made; if not run "sh run.sh"
+  - Reload config
+
+```bash
+ls -la ~/Library/Application\ Support/espanso
+lrwxr-xr-x@ 1 chos5  2062660934  66 Aug  9 21:25 /Users/chos5/Library/Application Support/espanso -> /Users/chos5/github/prosseek/setup/OS_specific/Mac/espanso/espanso
+```
+
+## AI
+
+1. ChatGPT - prosseek
+2. Claude - prosseek
+- MCP setup

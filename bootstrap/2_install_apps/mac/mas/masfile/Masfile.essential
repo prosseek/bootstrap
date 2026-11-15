@@ -1,0 +1,41 @@
+# essential -- App Store apps needed right after the first setup
+# Install only this file:  bash install.sh essential
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+# ~/github/prosseek/setup/bootstrap/2_install_apps/mac/mas
+
+# Example:
+# mas list                  # installed App Store apps: id, name, version
+# mas search MagicGlance    # search the App Store
+# mas install 6449926189    # install by id (MagicGlance)
+
+# Ebook 
+1494992020  Supernote Partner
+1276493162  reMarkable
+
+## Editor
+1487937127  Craft
+775737590  iA Writer
+1006087419 SnippetsLab
+
+## Windows
+1295203466  Windows App
+
+## Screen
+1528890965  TextSniper
+
+## Finder
+6698876601  Folder Preview
+1064959555  New File Menu
+
+## Computer Management
+1111570163  GrandPerspective
+6449926189  MagicGlance       # battery (bluetooth) display
+
+## Utility
+457622435  Yoink
+470158793  Keka
+
+
+

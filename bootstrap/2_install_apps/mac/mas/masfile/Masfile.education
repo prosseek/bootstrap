@@ -1,0 +1,7 @@
+# education -- App Store apps
+# Install only this file:  bash install.sh education
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+1020339980  Explain Everything

@@ -1,0 +1,27 @@
+# utilities -- App Store apps (Utilities)
+# Install only this file:  bash install.sh utilities
+#
+# One app per line:  <App Store id>  <name>   (the name is only for reading)
+# The App Store must be signed in first, or every line fails.
+
+937984704  Amphetamine
+411643860  DaisyDisk
+455970963  Disk Doctor
+686428787  Duplicate Detective
+1643144565  FastestVPN
+402569179  Find Any File
+1501563902  Allume
+417375580  BetterSnapTool
+1035236694  Commander One
+1485052491  Dropzone 4
+1452453066  Hidden Bar
+1527619437  Maccy
+6749519388  Outpost
+6444322545  SingleFile
+1522368690  WebP Converter
+1528890965  TextSniper
+457622435  Yoink
+1295203466  Windows App
+470158793  Keka
+1111570163  GrandPerspective
+6698876601  Folder Preview
