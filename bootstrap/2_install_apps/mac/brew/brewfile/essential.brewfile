@@ -96,7 +96,8 @@ cask "ghostty"
 cask "espanso"
 cask "hammerspoon"   # Desktop automation application
 cask "input-source-pro"   # Tool for multi-language users
-cask "karabiner-elements"   # Keyboard customiser
+cask "keyboard-maestro"
+#cask "karabiner-elements"   # Keyboard customiser, not actively used now
 
 ## Media Player 
 cask "iina"   # Free and open-source media player
