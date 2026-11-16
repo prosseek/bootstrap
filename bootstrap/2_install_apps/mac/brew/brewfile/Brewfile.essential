@@ -51,6 +51,7 @@ cask "cleanshot"
 cask "rectangle-pro"
 
 ## Publish
+brew "pandoc"
 brew "marp-cli", link: false   # Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images
 brew "graphviz"   # Graph visualization software from AT&T and Bell Labs
 cask "drawio"   # Online diagram software
@@ -71,10 +72,12 @@ cask "visual-studio-code"
 cask "obsidian"
 
 ## GIT
+brew "gh"
 cask "tower"
 cask "beyond-compare"
 
 ## LLM
+cask "chatgpt"
 cask "perplexity"   # AI-powered answer engine with Personal Computer agent
 cask "antigravity"  # Agent orchestration platform
 cask "antigravity-ide"   # AI Coding Agent IDE
