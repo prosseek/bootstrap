@@ -1,5 +1,5 @@
 # installed.txt -- Homebrew items of all computers merged (m4, mini23). Made from installed.<computer>.txt.
-# The comment after an item says which computers have it. Copy the lines you want into brewfile/Brewfile.<group>.
+# The comment after an item says which computers have it. Copy the lines you want into brewfile/<group>.brewfile.
 
 ## taps (8)
 tap "c0desurfer/tap", trusted: { casks: ["swift-salamander"] }   # mini23

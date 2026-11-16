@@ -1,6 +1,6 @@
 # mas - App Store apps
 
-Install App Store apps with the `mas` command (installed by `../brew`, `Brewfile.essential`).
+Install App Store apps with the `mas` command (installed by `../brew`, `essential.brewfile`).
 The App Store must be signed in first. That cannot be automated.
 
 ## What is `mas`
@@ -15,18 +15,18 @@ mas install 6449926189    # install by id (MagicGlance)
 
 ## Install: `install.sh`
 
-One `masfile/Masfile.<group>` per group (all in the `masfile/` folder), one line per app: `<App Store id>  <name>` (the name is only for reading).
+One `masfile/<group>.mas` per group (all in the `masfile/` folder), one line per app: `<App Store id>  <name>` (the name is only for reading).
 
 ```
-bash install.sh                # no argument: only Masfile.essential
+bash install.sh                # no argument: only essential.mas
 bash install.sh essential      # the same, written out
-bash install.sh productivity   # only Masfile.productivity
-bash install.sh all            # every Masfile.*
+bash install.sh productivity   # only productivity.mas
+bash install.sh all            # every *.mas
 ```
 
 - No argument installs **only `essential`**. Only the word `all` installs every group, which is a lot of apps.
 - It prints `skip` / `installed` / `FAIL` per app. Safe to re-run: what is installed is skipped.
-- To add a group, create `masfile/Masfile.<name>`. `install.sh` does not change.
+- To add a group, create `masfile/<name>.mas`. `install.sh` does not change.
 - `run.sh` calls `bash install.sh essential`.
 
 ## Find what is installed now: `list_installed.sh`
@@ -54,7 +54,7 @@ The name is lower-cased, and anything but letters, digits, `-` and `_` becomes `
 To get the apps on a new Mac:
 
 1. Run `bash list_installed.sh` on the old Mac (and on every other Mac you want to compare).
-2. Copy the lines you want into `masfile/Masfile.<group>` (e.g. `Masfile.work`, `Masfile.media`).
+2. Copy the lines you want into `masfile/<group>.mas` (e.g. `work.mas`, `media.mas`).
 3. On the new Mac: sign in to the App Store, then `bash install.sh work`.
 
 The category comes from the App Store data stored in each app (`mdls -name kMDItemAppStoreCategory`).
@@ -68,7 +68,7 @@ brew list --cask | grep -i NAME         # installed as a Homebrew cask
 ls -d /Applications/NAME.app            # where the app is
 ```
 
-In the App Store: it is in `mas list`, and its id is in a Masfile (e.g. `6449926189  MagicGlance` in `Masfile.productivity`).
+In the App Store: it is in `mas list`, and its id is in a Masfile (e.g. `6449926189  MagicGlance` in `productivity.mas`).
 Not in either list: the app was downloaded by hand.
 
 ## Not in the App Store, not in brew

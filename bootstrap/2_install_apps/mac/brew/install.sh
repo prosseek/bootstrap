@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
 # install.sh - install apps with Homebrew, one category at a time.
-# A category is one Brewfile in the brewfile/ folder: brewfile/Brewfile.<category> (e.g. Brewfile.essential).
+# A category is one Brewfile in the brewfile/ folder: brewfile/<category>.brewfile (e.g. essential.brewfile).
 #
 # Usage:
-#   bash install.sh essential    # only Brewfile.essential
-#   bash install.sh              # no argument: every Brewfile.*
+#   bash install.sh essential    # only essential.brewfile
+#   bash install.sh              # no argument: every *.brewfile
 #
 # For every line of a Brewfile it prints what happened:
 #   skip       already installed by brew, nothing done
@@ -16,7 +16,7 @@
 #
 # Needs Homebrew: run 1_first_step/mac/2_run.sh first.
 # Safe to re-run: what is installed is skipped.
-# To add a category: create brewfile/Brewfile.<name>. This script does not change.
+# To add a category: create brewfile/<name>.brewfile. This script does not change.
 # App Store apps are not here: see ../mas.
 
 # `set -u`: an unset variable is an error (catches typos).
@@ -54,7 +54,7 @@ except Exception:
     [ -n "$app" ] && [ -e "${APP_DIR:-/Applications}/$app" ]
 }
 
-# install_category: go through "Brewfile.$CURRENT" one line at a time.
+# install_category: go through "$CURRENT.brewfile" one line at a time.
 # (run_categories sets CURRENT and calls this once per category.)
 #
 # Why one line at a time? `brew bundle` on the whole file skips what is installed but does
@@ -65,10 +65,10 @@ except Exception:
 # brew itself decides what "installed" means for brew / cask / tap / vscode lines.
 # The lines are processed in file order, so a `tap` line comes before the items that need it.
 install_category() {
-    local file="$DIR/brewfile/Brewfile.$CURRENT"
-    [ -f "$file" ] || { warn "[$CURRENT] no such Brewfile: Brewfile.$CURRENT"; return 1; }
+    local file="$DIR/brewfile/$CURRENT.brewfile"
+    [ -f "$file" ] || { warn "[$CURRENT] no such Brewfile: $CURRENT.brewfile"; return 1; }
 
-    log "[$CURRENT] Brewfile.$CURRENT"
+    log "[$CURRENT] $CURRENT.brewfile"
 
     local one line installed=0 skipped=0 existing=0 failed=0
     one="$(mktemp)"
@@ -106,8 +106,8 @@ main() {
     [ "$#" -le 1 ] || { echo "Usage: bash install.sh [CATEGORY]" >&2; exit 1; }
     load_brew || { echo "brew not found: run 1_first_step/mac/2_run.sh first." >&2; exit 1; }
 
-    # One category given: just that one. None given: all of them.
-    run_categories "$DIR/brewfile" Brewfile install_category "$@"
+    # One category given: just that one. None given: every brewfile/*.brewfile.
+    run_categories_ext "$DIR/brewfile" brewfile install_category "$@"
 
     finish
 }

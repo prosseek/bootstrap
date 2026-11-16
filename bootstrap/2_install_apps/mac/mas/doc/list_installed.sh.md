@@ -1,18 +1,18 @@
 # mas - App Store apps
 
-Install App Store apps with the `mas` command (installed by `../brew`, `Brewfile.essential`).
+Install App Store apps with the `mas` command (installed by `../brew`, `essential.brewfile`).
 The App Store must be signed in first. That cannot be automated.
 
 ## Install: `install.sh`
 
-One `masfile/Masfile.<group>` per group (all in the `masfile/` folder), one line per app: `<App Store id>  <name>` (the name is only for reading).
+One `masfile/<group>.mas` per group (all in the `masfile/` folder), one line per app: `<App Store id>  <name>` (the name is only for reading).
 
 ```
-bash install.sh essential   # only Masfile.essential
-bash install.sh             # no argument: every Masfile.*
+bash install.sh essential   # only essential.mas
+bash install.sh             # no argument: every *.mas
 ```
 
-It prints `skip` / `installed` / `FAIL` per app. Safe to re-run. To add a group, create `masfile/Masfile.<name>`.
+It prints `skip` / `installed` / `FAIL` per app. Safe to re-run. To add a group, create `masfile/<name>.mas`.
 No argument installs every group, which is a lot of apps: prefer one group at a time.
 
 ## Find what is installed now: `list_installed.sh`
@@ -40,7 +40,7 @@ The name is lower-cased, and anything but letters, digits, `-` and `_` becomes `
 To get the apps on a new Mac:
 
 1. Run `bash list_installed.sh` on the old Mac (and on every other Mac you want to compare).
-2. Copy the lines you want into `masfile/Masfile.<group>` (e.g. `Masfile.work`, `Masfile.media`).
+2. Copy the lines you want into `masfile/<group>.mas` (e.g. `work.mas`, `media.mas`).
 3. On the new Mac: sign in to the App Store, then `bash install.sh work`.
 
 The category comes from the App Store data stored in each app (`mdls -name kMDItemAppStoreCategory`).

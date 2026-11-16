@@ -1,5 +1,5 @@
 # installed.m4.txt -- Homebrew items on m4. Made by list_installed.sh.
-# Copy the lines you want (with their # comment) into brewfile/Brewfile.<group>, then:  bash install.sh <group>
+# Copy the lines you want (with their # comment) into brewfile/<group>.brewfile, then:  bash install.sh <group>
 
 tap "daipeihust/tap"
 tap "nikitabobko/tap"

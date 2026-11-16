@@ -100,8 +100,8 @@ computer_name() {
     printf '%s' "$name" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9_-]+/-/g; s/^-+|-+$//g'
 }
 
-# --- categories: one list file per category, e.g. Brewfile.essential, Masfile.essential ---
-# The category name is the part of the file name after "PREFIX." (Brewfile.essential -> essential).
+# --- categories: one list file per category, e.g. essential.brewfile, essential.mas ---
+# categories/run_categories: files named "PREFIX.name". categories_ext/run_categories_ext: files named "name.EXT".
 
 # categories DIR PREFIX: print every category name found in DIR, one per line.
 #   The glob lists the files. If nothing matches, bash leaves the pattern as plain text,
@@ -128,6 +128,25 @@ run_categories() {
     for c in $list; do
         CURRENT="$c"
         run_step "$c" "$prefix.$c" "$fn"
+    done
+}
+
+# categories_ext DIR EXT: like categories, for files named "<category>.EXT" (essential.brewfile -> essential).
+categories_ext() {
+    local dir="$1" ext="$2" f
+    for f in "$dir"/*."$ext"; do
+        [ -f "$f" ] && { f="${f##*/}"; echo "${f%."$ext"}"; }
+    done
+}
+
+# run_categories_ext DIR EXT FUNCTION [CATEGORY]: like run_categories, for "<category>.EXT" files.
+# FUNCTION finds its file as "$DIR/$CURRENT.EXT".
+run_categories_ext() {
+    local dir="$1" ext="$2" fn="$3" list c
+    list="${4:-$(categories_ext "$dir" "$ext" | tr '\n' ' ')}"
+    for c in $list; do
+        CURRENT="$c"
+        run_step "$c" "$c.$ext" "$fn"
     done
 }
 

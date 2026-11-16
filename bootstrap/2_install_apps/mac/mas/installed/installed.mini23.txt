@@ -1,5 +1,5 @@
 # installed.mini23.txt -- App Store apps on mini23, by category. Made by list.sh.
-# Copy the lines you want into masfile/Masfile.<group>, then:  bash install.sh <group>
+# Copy the lines you want into masfile/<group>.mas, then:  bash install.sh <group>
 
 ## Business
 699877408  BigHairyGoal

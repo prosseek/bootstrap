@@ -15,7 +15,7 @@
 #   3. The result is sorted by category and written to installed/installed.<computer>.txt next to this script.
 #
 # installed/installed.<computer>.txt is only a report, it is overwritten when the same Mac runs again.
-# To choose the apps you want on a new Mac, copy lines from it into masfile/Masfile.<group> (same
+# To choose the apps you want on a new Mac, copy lines from it into masfile/<group>.mas (same
 # "<id>  <name>" format), then
 #   bash install.sh <group>
 # It is not a Masfile, so install.sh never reads it.
@@ -69,7 +69,7 @@ main() {
 
     {
         echo "# $(basename "$OUT") -- App Store apps on $(computer_name "${1:-}"), by category. Made by list_installed.sh."
-        echo "# Copy the lines you want into masfile/Masfile.<group>, then:  bash install.sh <group>"
+        echo "# Copy the lines you want into masfile/<group>.mas, then:  bash install.sh <group>"
         # Sort by category, then by name; print a "## category" header when the category changes.
         sort -t "$(printf '\t')" -k1,1 -k3,3 "$tmp" | awk -F '\t' '
             $1 != last { print ""; print "## " $1; last = $1 }

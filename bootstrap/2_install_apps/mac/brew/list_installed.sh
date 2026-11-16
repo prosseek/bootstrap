@@ -21,9 +21,9 @@
 #
 # installed/installed.<computer>.txt is only a report, overwritten when the same Mac runs again.
 # To choose the apps you want on a new Mac, copy lines (with their # comment) into
-# brewfile/Brewfile.<group>, then:
+# brewfile/<group>.brewfile, then:
 #   bash install.sh <group>
-# It is not a Brewfile.<group>, so install.sh never reads it.
+# It is not a <group>.brewfile, so install.sh never reads it.
 
 set -u
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -52,7 +52,7 @@ main() {
 
     {
         echo "# installed.$name.txt -- Homebrew items on $name. Made by list_installed.sh."
-        echo "# Copy the lines you want (with their # comment) into brewfile/Brewfile.<group>, then:  bash install.sh <group>"
+        echo "# Copy the lines you want (with their # comment) into brewfile/<group>.brewfile, then:  bash install.sh <group>"
         echo
         cat "$tmp"
     } > "$out"

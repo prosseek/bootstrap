@@ -15,6 +15,6 @@ if [ "$(uname -m)" = "x86_64" ] && [ "$(sysctl -n hw.optional.arm64 2>/dev/null)
 fi
 
 
-bash install.sh essential   # only brewfile/Brewfile.essential
+bash install.sh essential   # only brewfile/essential.brewfile
 
-#bash install.sh             # every brewfile/Brewfile.*
+#bash install.sh             # every brewfile/*.brewfile

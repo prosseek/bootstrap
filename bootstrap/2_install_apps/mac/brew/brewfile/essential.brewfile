@@ -21,6 +21,7 @@ brew "tree"   # Display directories as trees (with optional color/HTML output)
 brew "ncurses"   # mini23
 brew "htop"   # Improved top (interactive process viewer)
 brew "direnv" # Load/unload environment variables based on $PWD
+cask "symboliclinker" # create symbolic link @ Finder right click
 
 ## Network
 brew "wget"   # m4 # Internet file retriever
@@ -42,6 +43,9 @@ cask "homebrew-app"
 ## Image
 cask "clop"
 brew "imagemagick"   # Tools and libraries to manipulate images in select formats
+
+# Quick Look
+cask "MyCometG3/qlstephenswift/qlstephenswift" 
 
 ## Finder
 cask "openinterminal"

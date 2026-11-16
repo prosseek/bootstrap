@@ -86,6 +86,6 @@ done
 
 1. 3번 명령으로 `OK`인 앱을 고른다.
 2. 무료이거나 App Store 구매가 없는 앱만 정한다.
-3. `brew/brewfile/Brewfile.*`에 `cask "<이름>"`을 추가하고, `mas/masfile/Masfile.*`에서 그 줄을 지운다.
+3. `brew/brewfile/*.brewfile`에 `cask "<이름>"`을 추가하고, `mas/masfile/*.mas`에서 그 줄을 지운다.
 4. Brewfile 주석에 한 줄 이유를 남긴다 (예: `# was mas: free, no sandbox`).
 5. 이미 설치된 앱을 바꾸는 경우: 앱 설정을 백업하고, App Store판을 지운 뒤 `brew install --cask`로 설치한다.
