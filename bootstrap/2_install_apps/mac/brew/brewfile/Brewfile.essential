@@ -56,6 +56,10 @@ brew "graphviz"   # Graph visualization software from AT&T and Bell Labs
 cask "drawio"   # Online diagram software
 cask "typora"   # Configurable document editor that supports Markdown
 
+## TeX
+cask basictex
+cask texifier
+
 ## Editor
 brew "vim"   # all
 brew "neovim"   # all
