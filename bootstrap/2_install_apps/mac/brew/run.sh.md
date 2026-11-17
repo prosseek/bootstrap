@@ -7,6 +7,7 @@
 - GUI에서 시작했을 때 Terminal로 넘겨 `sudo`가 비밀번호를 받을 수 있게 한다.
 - Apple Silicon Mac에서 Rosetta(x86_64)로 시작한 경우 arm64 셸로 다시 시작한다.
 - 설치 시작 시 관리자 인증을 한 번만 받고, 설치가 끝날 때까지 인증을 유지한다.
+- Homebrew가 없으면 먼저 설치한다 (`ensure_brew`, `_common/lib.sh`). 이미 받아 둔 `sudo` 인증을 쓰므로 비밀번호를 다시 묻지 않는다. (예전에는 `1_first_step/mac/2_run.sh`의 9번 단계였고, `setup_mac/_Mac`으로 옮기면서 이쪽으로 이동했다.)
 - `brewfile/essential.brewfile`에 정의된 필수 항목 설치를 시작한다.
 
 ## 일반적인 실행 방법
@@ -43,6 +44,8 @@ run.sh 시작
   ├─ sudo -v로 관리자 인증을 미리 확인
   │
   ├─ 백그라운드에서 sudo 인증 캐시를 주기적으로 갱신
+  │
+  ├─ ensure_brew: Homebrew가 없으면 설치
   │
   └─ bash install.sh essential
        └─ brewfile/essential.brewfile의 항목을 순서대로 설치

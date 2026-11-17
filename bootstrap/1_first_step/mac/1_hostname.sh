@@ -6,11 +6,11 @@
 #   1  Set hostname (asks for the name; Enter skips it, then no password is asked)
 #
 # Run it as yourself, not with sudo.
-# Everything else is in 2_run.sh (Part 2).
+# The other Mac settings (1_run.sh, 2_sudorun.sh) moved to ~/github/prosseek/setup_mac/_Mac/setup
+# and run with `bash ~/github/prosseek/setup_mac/runall.sh`.
 #
 # Usage:
 #   bash 1_hostname.sh
-#   bash 2_run.sh
 #
 # Safe to re-run. Step numbers are the same as in Part 1 of readme.md.
 set -u
@@ -54,7 +54,7 @@ main() {
 
     run_step 1 "Set hostname" step_1_hostname
 
-    finish "Next: bash 2_run.sh"
+    finish "Next: install the apps (bootstrap/2_install_apps/mac), then bash ~/github/prosseek/setup_mac/runall.sh"
 }
 
 main "$@"

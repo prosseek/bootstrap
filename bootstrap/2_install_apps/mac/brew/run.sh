@@ -43,6 +43,11 @@ fi
 sudo_keepalive_pid=$!
 trap 'kill "$sudo_keepalive_pid" 2>/dev/null || true' EXIT
 
+# Install Homebrew itself first when it is missing (ensure_brew is in bootstrap/_common/lib.sh).
+# sudo is already unlocked above, so this asks for no second password.
+source "$PWD/../../../_common/lib.sh"
+ensure_brew || { echo "Homebrew is not available: cannot install apps." >&2; exit 1; }
+
 
 bash install.sh essential   # only brewfile/essential.brewfile
 

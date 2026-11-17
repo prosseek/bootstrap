@@ -1,6 +1,6 @@
 # Install apps
 
-Install apps with Homebrew, one category at a time. Run `1_first_step/mac/2_run.sh` first (it installs Homebrew).
+Install apps with Homebrew, one category at a time. `mac/brew/run.sh` installs Homebrew itself when it is missing (`ensure_brew` in `_common/lib.sh`), so nothing has to run before it.
 
 ## mac/brew
 
@@ -8,8 +8,9 @@ One `brewfile/Brewfile.<category>` per category (all in the `brewfile/` folder),
 
 ```
 cd mac/brew
-bash install.sh essential   # only brewfile/Brewfile.essential
-bash install.sh             # no argument: every brewfile/Brewfile.*
+bash run.sh                 # installs Homebrew if missing, then the essential category
+bash install.sh essential   # only brewfile/essential.brewfile (needs Homebrew already)
+bash install.sh             # no argument: every brewfile/*.brewfile
 ```
 
 For every line of a Brewfile the script prints what it did:

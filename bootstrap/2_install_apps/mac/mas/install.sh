@@ -63,7 +63,7 @@ install_category() {
 
 main() {
     [ "$#" -le 1 ] || { echo "Usage: bash install.sh [CATEGORY | all]   (no argument = essential)" >&2; exit 1; }
-    load_brew || { echo "brew not found: run 1_first_step/mac/2_run.sh first." >&2; exit 1; }
+    load_brew || { echo "brew not found: run 'bash run.sh' in ../brew first (it installs Homebrew)." >&2; exit 1; }
     command -v mas > /dev/null || { echo "mas not found: run ../brew/install.sh essential first." >&2; exit 1; }
 
     # No argument -> essential. Only the word "all" installs every *.mas

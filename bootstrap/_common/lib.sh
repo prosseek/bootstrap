@@ -1,4 +1,6 @@
-# lib.sh - helpers shared by every script under bootstrap/ (1_first_step, 2_install_apps ...).
+# lib.sh - helpers shared by every script under bootstrap/ (1_first_step, 2_install_apps ...)
+# and by the Mac settings scripts in setup_mac/_Mac (setup/1_run.sh, setup/2_sudorun.sh, setup/3_manual.sh) and setup_mac/_Finder/right_click/run.sh, which source it
+# by its fixed place: $HOME/github/prosseek/bootstrap/bootstrap/_common/lib.sh
 # Source it; do not run it. A function used by more than one script belongs here.
 #
 # Each step prints its result right after it runs, and finish() prints a summary table:
@@ -90,6 +92,20 @@ load_brew() {
     return 1
 }
 
+# Install Homebrew when it is missing, and put brew on PATH for this script.
+# Safe to re-run: does nothing when brew is already installed.
+# `brew` itself needs no sudo, but its installer creates /opt/homebrew as an administrator.
+# The password is asked here (sudo -v), so NONINTERACTIVE=1 can run the installer without more questions.
+# PATH for later shells comes from setup's zprofile (it has /opt/homebrew/bin).
+ensure_brew() {
+    load_brew && return 0
+    log "Homebrew is not installed: installing it"
+    sudo -v || { warn "Homebrew installer needs the administrator password (sudo failed)"; return 1; }
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
+        || { warn "Homebrew install failed"; return 1; }
+    load_brew || { warn "Homebrew installed, but brew was not found afterwards"; return 1; }
+}
+
 # computer_name [GIVEN]: the computer name used in file names (installed.<computer>.txt).
 #   GIVEN if one was passed, otherwise LocalHostName, otherwise `hostname -s`.
 #   Lower-cased; anything but letters, digits, "-" and "_" becomes "-" (safe in a file name).
@@ -147,6 +163,55 @@ run_categories_ext() {
     for c in $list; do
         CURRENT="$c"
         run_step "$c" "$c.$ext" "$fn"
+    done
+}
+
+# --- System Settings panes: open several panes in a row, so the back button (<-) walks through them ---
+# Used by setup_mac/_Mac/setup/3_manual.sh and setup_mac/_Finder/right_click/run.sh.
+# A step calls queue_pane (once per pane) and add_manual (its instruction); main calls open_panes
+# after the last step and before finish.
+
+PANE_DELAY=0.5   # seconds between two `open` calls
+PANES=()         # URLs to open, in step order (see open_panes)
+PANE_STEPS=()    # PANE_STEPS[i] = the step number that PANES[i] belongs to
+
+# queue_pane STEP URL: remember a pane (open_panes opens them all at the end)
+# and show the command that opens it.
+queue_pane() {
+    PANE_STEPS+=("$1")
+    PANES+=("$2")
+    echo "    open \"$2\""
+}
+
+# add_manual STEP TEXT: add the instruction to the final list, followed by the
+# open command of every pane queued for this step (none for steps without a pane).
+add_manual() {
+    local step="$1" text="$2" entry i
+    entry="$step  $text"
+    for i in ${PANES[@]+"${!PANES[@]}"}; do
+        [ "${PANE_STEPS[$i]}" = "$step" ] && entry+=$'\n'"      open \"${PANES[$i]}\""
+    done
+    MANUAL+=("$entry")
+}
+
+# open_panes: open every queued pane, PANE_DELAY seconds apart, and print each command.
+# Reverse order: the first queued pane is opened last, so it stays on screen and the
+# back button (<-) goes to the next one.
+open_panes() {
+    local i n="${#PANES[@]}"
+    [ "$n" -gt 0 ] || return 0
+
+    # `open` calls that arrive while System Settings is still starting may be lost, so start it first.
+    if ! pgrep -x "System Settings" > /dev/null 2>&1; then
+        open -a "System Settings" > /dev/null 2>&1 || true
+        sleep 2
+    fi
+
+    log "Opening $n System Settings panes, ${PANE_DELAY}s apart (use the back button <- to go on)"
+    for (( i = n - 1; i >= 0; i-- )); do
+        echo "    [${PANE_STEPS[$i]}] open \"${PANES[$i]}\""
+        open "${PANES[$i]}" > /dev/null 2>&1 || warn "could not open ${PANES[$i]}"
+        sleep "$PANE_DELAY"
     done
 }
 

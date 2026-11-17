@@ -14,7 +14,7 @@
 #   FAIL       was missing, could not be installed
 # Each category then gets OK (no FAIL) or FAIL, and a summary table is printed at the end.
 #
-# Needs Homebrew: run 1_first_step/mac/2_run.sh first.
+# Needs Homebrew: run.sh in this folder installs it when it is missing (ensure_brew in _common/lib.sh).
 # Safe to re-run: what is installed is skipped.
 # To add a category: create brewfile/<name>.brewfile. This script does not change.
 # App Store apps are not here: see ../mas.
@@ -104,7 +104,7 @@ install_category() {
 
 main() {
     [ "$#" -le 1 ] || { echo "Usage: bash install.sh [CATEGORY]" >&2; exit 1; }
-    load_brew || { echo "brew not found: run 1_first_step/mac/2_run.sh first." >&2; exit 1; }
+    load_brew || { echo "brew not found: run 'bash run.sh' in this folder first (it installs Homebrew)." >&2; exit 1; }
 
     # One category given: just that one. None given: every brewfile/*.brewfile.
     run_categories_ext "$DIR/brewfile" brewfile install_category "$@"
