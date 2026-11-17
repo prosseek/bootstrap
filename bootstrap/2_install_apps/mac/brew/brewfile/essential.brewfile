@@ -21,7 +21,12 @@ brew "tree"   # Display directories as trees (with optional color/HTML output)
 brew "ncurses"   # mini23
 brew "htop"   # Improved top (interactive process viewer)
 brew "direnv" # Load/unload environment variables based on $PWD
-cask "symboliclinker" # create symbolic link @ Finder right click
+# cask "symboliclinker" # create symbolic link @ Finder right click
+# brew uninstall --cask symboliclinker
+# ==> Uninstalling Cask symboliclinker
+# ==> Backing up Service 'SymbolicLinker.service' to '/opt/homebrew/Caskroom/symboliclinker/
+# ==> Removing Service '/Users/smcho/Library/Services/SymbolicLinker.service'
+# ==> Purging files for version 2.2 of Cask symboliclinker
 
 ## Network
 brew "wget"   # m4 # Internet file retriever
