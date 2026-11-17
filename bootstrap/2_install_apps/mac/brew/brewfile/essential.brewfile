@@ -62,8 +62,8 @@ cask "drawio"   # Online diagram software
 cask "typora"   # Configurable document editor that supports Markdown
 
 ## TeX
-cask basictex
-cask texifier
+cask "basictex"
+cask "texifier"
 
 ## Editor
 brew "vim"   # all
