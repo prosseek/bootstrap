@@ -62,7 +62,7 @@ cask "rectangle-pro"
 
 ## Publish
 brew "pandoc"
-brew "marp-cli", link: false   # Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images
+brew "marp-cli" # Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images
 brew "graphviz"   # Graph visualization software from AT&T and Bell Labs
 cask "drawio"   # Online diagram software
 cask "typora"   # Configurable document editor that supports Markdown
