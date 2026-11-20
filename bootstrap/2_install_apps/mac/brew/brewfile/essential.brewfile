@@ -3,6 +3,10 @@
 # ~/github/prosseek/setup_mac/_readme.md
 # The App Store apps themselves are installed by ../mas.
 
+## Drive
+brew "gdrive"
+cask "google-drive"
+
 ## Mac 
 brew "mas"
 brew "dockutil"
