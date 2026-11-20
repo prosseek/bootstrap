@@ -95,6 +95,9 @@ cask "claude"
 cask "google-gemini" # Native desktop AI assistant from Google
 cask "ollama-app"    # Get up and running with large language models locally
 
+### VM
+cask "orbstack" # Linux Virtual Machine
+
 ## Termainal
 cask "ghostty"
 
