@@ -79,7 +79,13 @@ cask "sublime-text"  # Text editor for code, markup and prose
 cask "macvim-app"    # Text editor
 cask "neovide-app"   # Neovim Client
 cask "visual-studio-code"
+
+## PKM
 cask "obsidian"
+cask "notion"
+
+## Research
+cask "zotero"
 
 ## GIT
 brew "gh"
