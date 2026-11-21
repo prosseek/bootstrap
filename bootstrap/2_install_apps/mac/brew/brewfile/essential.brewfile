@@ -6,7 +6,7 @@
 ## Drive
 brew "gdrive"
 cask "google-drive"
-cask "synology-drive"
+#cask "synology-drive"
 # cask "onedrive"
 
 ## Mac 
