@@ -3,7 +3,7 @@
 Make sure you have the correct "Git Classical Keys"
 
 ```
-scp -p ~/github/prosseek/setup/_lib/git/tokens/tokens.txt.zip smcho@hp.local:github/prosseek/setup/_lib/git/tokens/
+scp -p ~/github/prosseek/setup/_lib/git_token/tokens.txt.zip smcho@hp.local:github/prosseek/setup/_lib/git_token/
 ```
 
 ## 0 zsh/github/ssh & prosseek/bin
@@ -12,7 +12,7 @@ scp -p ~/github/prosseek/setup/_lib/git/tokens/tokens.txt.zip smcho@hp.local:git
 2. config/zsh/run.sh => zsh
 3. shell: `setup_gs` => ~/github/prosseek/setup/conf/_setup_gs.txt
     1. config/ssh/run.sh
-        1. automatically run _lib/git/tokens
+        1. automatically run _lib/git_token
         2. Update this key if necessary, always zip it
         3. Run other run_*.sh for automatic ssh access
     2. config/git/run.sh
