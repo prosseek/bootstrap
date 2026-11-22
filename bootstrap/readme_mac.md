@@ -49,10 +49,7 @@ scp -p ~/github/prosseek/setup/_lib/git_token/tokens.txt.zip smcho@hp.local:gith
     3. _Mac/mac_manual_setup/3_manual.sh => NOT run by runall.sh (no run.sh there, logged as ignored); run it by hand: opens the System Settings panes for the manual steps
     4. See ~/github/prosseek/setup_mac/_Mac/mac_setup/readme.md, 1_run.sh.md, 2_sudorun.sh.md, 3_manual.sh.md
 
-## 4_email
+## 2_email (iCloud) and email.sh (NKU + Gmail)
 
-1. ~/github/prosseek/bootstrap/bootstrap/1_first_step/mac/4_email.sh to setup email accounts
-  - apple is automatic
-  - school (microsoft)
-  - 6 google accounts
-
+1. ~/github/prosseek/bootstrap/bootstrap/1_first_step/mac/2_email.sh => iCloud (Apple Account) only; a check, sign-in is manual
+2. ~/github/prosseek/setup_mac/_ManualSetup/_email_setup/email.sh => school (microsoft) and 6 google accounts; see email.sh.md there

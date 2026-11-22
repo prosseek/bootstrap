@@ -6,7 +6,8 @@ are the same as the ones the script prints (`[1] OK ...`) and lists in its summa
 ```
 bash 1_hostname.sh   # Part 1: computer name (needs sudo)
                      # Parts 2 and 3 moved to ~/github/prosseek/setup_mac/_Mac (see below)
-bash 4_email.sh      # Part 4: e-mail accounts (mostly manual)
+bash 2_email.sh      # Part 2: iCloud / Apple Account (check only)
+                     # Microsoft/NKU and Google mail: ~/github/prosseek/setup_mac/_ManualSetup/_email_setup/email.sh
 ```
 
 * **Auto**: done by the script. **[No Auto]**: do it by hand, as written under the step.
@@ -37,27 +38,18 @@ Run as yourself, not with `sudo`. The password is asked only when you give a nam
 
 ---
 
-# Part 2 - `2_email.sh`
+# Part 2 - `2_email.sh` (iCloud only)
 
-How much can be automated: almost nothing. Adding an account needs a password plus a second factor or a browser login, and macOS has no supported command for it. A configuration profile does not help either: the Google account payload is iOS-only, and macOS shows it as "iOS-only settings" and does not create the accounts.
-So the script checks what it can (step 1), opens Internet Accounts with your Google address list (step 3) and lists the rest as `[No Auto]`. It changes nothing and is safe to re-run.
+This script only deals with the Apple Account (iCloud). The other mail accounts (Microsoft/NKU and Google) are in
+`~/github/prosseek/setup_mac/_ManualSetup/_email_setup/` (`email.sh`, with `email.sh.md` in Korean).
+
+How much can be automated: almost nothing. Signing in to the Apple Account needs a password plus a second factor, and macOS has no supported command for it.
+So the script only checks what it can (step 1) and lists the rest as `[No Auto]`. It changes nothing and is safe to re-run.
 
 1. Apple Account (Auto check only; sign-in is [No Auto])
     1. The script reads `defaults read MobileMeAccounts Accounts` and prints the signed-in account. `OK` if found, otherwise `No Auto`.
     2. Manual way: open "x-apple.systempreferences:com.apple.systempreferences.AppleIDSettings?iCloud" -> sign in -> iCloud -> turn on Mail
-    3. If you already signed in to the Apple Account (`setup_mac/_Mac/mac_manual_setup/3_manual.sh.md`, step 1), this step is `OK`.
-2. [No Auto] Microsoft (NKU school account)
-    1. School login (SSO + MFA) must be done by you.
-    2. open "x-apple.systempreferences:com.apple.Internet-Accounts-Settings.extension" -> Add Account -> Microsoft Exchange -> sign in with the NKU account
-    3. Choose Mail (and Calendars, Contacts if wanted). A school-managed Mac may have its own policy.
-3. [No Auto] Google accounts (several)
-    1. Optional: put one e-mail per line in `accounts.txt` (next to the script; `#` lines are ignored).
-    2. The script prints the addresses and opens Internet Accounts for you.
-    3. By hand, once for each address: open "x-apple.systempreferences:com.apple.Internet-Accounts-Settings.extension" -> Add Account -> Google -> sign in in the browser sheet (password + 2-step) -> choose Mail (and others if wanted).
-    4. Each account needs its own browser login (OAuth), so the status is always `No Auto`.
-
-The Internet Accounts link depends on the macOS version: the script uses `com.apple.Internet-Accounts-Settings.extension` on macOS 13+ and `com.apple.preferences.internetaccounts` before that.
-A school-managed Mac (NKU) may hide or block the pane. Then open Mail -> menu Mail -> Add Account... instead; if that is blocked too, ask IT.
+    3. If you already signed in to the Apple Account (`setup_mac/_ManualSetup/_mac_manual_setup/3_manual.sh.md`, step 1), this step is `OK`.
 
 ---
 
@@ -79,5 +71,5 @@ bash _Mac/runall.sh       # only the Mac settings (3_manual.sh is run by hand)
 Homebrew was step 9 of the old `2_run.sh`. It is now installed by `2_install_apps/mac/brew/run.sh`
 when it is missing, so that script no longer needs `2_run.sh` first.
 
-Order on a new Mac: `1_hostname.sh` -> `2_install_apps` (brew, mas) -> `setup_mac/runall.sh` -> `4_email.sh`.
+Order on a new Mac: `1_hostname.sh` -> `2_install_apps` (brew, mas) -> `setup_mac/runall.sh` -> `2_email.sh` (iCloud) -> `setup_mac/_ManualSetup/_email_setup/email.sh` (NKU + Gmail).
 
