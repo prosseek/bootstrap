@@ -74,7 +74,9 @@ install_category() {
     one="$(mktemp)"
 
     # IFS= and -r keep each line exactly as written (no trimming, no backslash handling).
-    while IFS= read -r line; do
+    # `|| [ -n "$line" ]`: if the last line has no trailing newline, `read` returns non-zero
+    # even though it filled $line; without this the final line would be silently skipped.
+    while IFS= read -r line || [ -n "$line" ]; do
         # Ignore blank lines and comments.
         case "$line" in
             ''|'#'*) continue ;;
