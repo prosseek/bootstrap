@@ -24,7 +24,7 @@ scp -p ~/github/prosseek/setup/_lib/git_token/tokens.txt.zip smcho@hp.local:gith
 
 1. 1_hostname.sh to set hostname
 
-(2_run.sh and 3_sudorun.sh moved to ~/github/prosseek/setup_mac/_Mac/setup as 1_run.sh and 2_sudorun.sh, see "3 setup_mac" below.)
+(2_run.sh and 3_sudorun.sh moved to ~/github/prosseek/setup_mac/_Mac/mac_setup as 1_run.sh and 2_sudorun.sh, see "3 setup_mac" below.)
 
 ## 2_install_apps
 
@@ -43,11 +43,11 @@ scp -p ~/github/prosseek/setup/_lib/git_token/tokens.txt.zip smcho@hp.local:gith
 
 ~/github/prosseek/setup_mac
 
-1. `bash runall.sh` runs the run.sh of every app folder, including `_Mac/run.sh`
-    1. _Mac/setup/1_run.sh => keyboard, mouse, trackpad, Finder, TextEdit (automatic)
-    2. _Mac/setup/2_sudorun.sh => sudo run required actions (ssh)
-    3. _Mac/setup/3_manual.sh => opens the System Settings panes for the manual steps (press the back button to go on)
-    4. See ~/github/prosseek/setup_mac/_Mac/setup/readme.md, 1_run.sh.md, 2_sudorun.sh.md, 3_manual.sh.md
+1. `bash runall.sh` runs the run.sh of every app folder, including `_Mac/runall.sh`
+    1. _Mac/mac_setup/1_run.sh => keyboard, mouse, trackpad, Finder, TextEdit (automatic)
+    2. _Mac/mac_setup/2_sudorun.sh => sudo run required actions (ssh)
+    3. _Mac/mac_manual_setup/3_manual.sh => NOT run by runall.sh (no run.sh there, logged as ignored); run it by hand: opens the System Settings panes for the manual steps
+    4. See ~/github/prosseek/setup_mac/_Mac/mac_setup/readme.md, 1_run.sh.md, 2_sudorun.sh.md, 3_manual.sh.md
 
 ## 4_email
 

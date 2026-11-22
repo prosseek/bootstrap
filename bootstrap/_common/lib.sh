@@ -1,5 +1,5 @@
 # lib.sh - helpers shared by every script under bootstrap/ (1_first_step, 2_install_apps ...)
-# and by the Mac settings scripts in setup_mac/_Mac (setup/1_run.sh, setup/2_sudorun.sh, setup/3_manual.sh) and setup_mac/_Finder/right_click/run.sh, which source it
+# and by the Mac settings scripts in setup_mac/_Mac (mac_setup/1_run.sh, mac_setup/2_sudorun.sh, mac_manual_setup/3_manual.sh) and setup_mac/_Finder/right_click/run.sh, which source it
 # by its fixed place: $HOME/github/prosseek/bootstrap/bootstrap/_common/lib.sh
 # Source it; do not run it. A function used by more than one script belongs here.
 #
@@ -167,7 +167,7 @@ run_categories_ext() {
 }
 
 # --- System Settings panes: open several panes in a row, so the back button (<-) walks through them ---
-# Used by setup_mac/_Mac/setup/3_manual.sh and setup_mac/_Finder/right_click/run.sh.
+# Used by setup_mac/_Mac/mac_manual_setup/3_manual.sh and setup_mac/_Finder/right_click/run.sh.
 # A step calls queue_pane (once per pane) and add_manual (its instruction); main calls open_panes
 # after the last step and before finish.
 

@@ -6,7 +6,7 @@
 #   1  Set hostname (asks for the name; Enter skips it, then no password is asked)
 #
 # Run it as yourself, not with sudo.
-# The other Mac settings (1_run.sh, 2_sudorun.sh) moved to ~/github/prosseek/setup_mac/_Mac/setup
+# The other Mac settings (1_run.sh, 2_sudorun.sh) moved to ~/github/prosseek/setup_mac/_Mac/mac_setup
 # and run with `bash ~/github/prosseek/setup_mac/runall.sh`.
 #
 # Usage:

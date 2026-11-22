@@ -45,7 +45,7 @@ So the script checks what it can (step 1), opens Internet Accounts with your Goo
 1. Apple Account (Auto check only; sign-in is [No Auto])
     1. The script reads `defaults read MobileMeAccounts Accounts` and prints the signed-in account. `OK` if found, otherwise `No Auto`.
     2. Manual way: open "x-apple.systempreferences:com.apple.systempreferences.AppleIDSettings?iCloud" -> sign in -> iCloud -> turn on Mail
-    3. If you already signed in to the Apple Account (`setup_mac/_Mac/setup/3_manual.sh.md`, step 1), this step is `OK`.
+    3. If you already signed in to the Apple Account (`setup_mac/_Mac/mac_manual_setup/3_manual.sh.md`, step 1), this step is `OK`.
 2. [No Auto] Microsoft (NKU school account)
     1. School login (SSO + MFA) must be done by you.
     2. open "x-apple.systempreferences:com.apple.Internet-Accounts-Settings.extension" -> Add Account -> Microsoft Exchange -> sign in with the NKU account
@@ -64,16 +64,16 @@ A school-managed Mac (NKU) may hide or block the pane. Then open Mail -> menu Ma
 ## Parts 2 and 3 moved to `setup_mac/_Mac`
 
 `2_run.sh` (keyboard, mouse, trackpad, Finder, TextEdit) and `3_sudorun.sh` (Remote Login / SSH)
-are now `1_run.sh` and `2_sudorun.sh` in `~/github/prosseek/setup_mac/_Mac/setup`, with their documentation
+are now `1_run.sh` and `2_sudorun.sh` in `~/github/prosseek/setup_mac/_Mac/mac_setup`, with their documentation
 (`1_run.sh.md`, `2_sudorun.sh.md` there, in Korean). The steps that cannot be automated (Apple Account,
 Touch ID, input sources ...) are in `3_manual.sh` there: it opens the System Settings panes one after another.
-`_Mac/run.sh` is the only file outside that folder, and it runs them.
+`_Mac/runall.sh` is the only file outside that folder; it runs `mac_setup/run.sh` (and ignores folders without a `run.sh`, logging them as `<name>.ignore.log`).
 They run together with the rest of `setup_mac`:
 
 ```
 cd ~/github/prosseek/setup_mac
-bash runall.sh            # runs _Mac/run.sh (1_run.sh, 2_sudorun.sh, 3_manual.sh) and every other app folder
-bash _Mac/run.sh          # only the Mac settings
+bash runall.sh            # runs _Mac/runall.sh (mac_setup/run.sh, Dockutil) and every other app folder
+bash _Mac/runall.sh       # only the Mac settings (3_manual.sh is run by hand)
 ```
 
 Homebrew was step 9 of the old `2_run.sh`. It is now installed by `2_install_apps/mac/brew/run.sh`
