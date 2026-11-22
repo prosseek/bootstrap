@@ -27,7 +27,7 @@ bash install.sh all            # every *.mas
 - No argument installs **only `essential`**. Only the word `all` installs every group, which is a lot of apps.
 - It prints `skip` / `installed` / `FAIL` per app. Safe to re-run: what is installed is skipped.
 - To add a group, create `masfile/<name>.mas`. `install.sh` does not change.
-- `run.sh` calls `bash install.sh essential`.
+- `run.sh`는 `bash install.sh essential`을 호출한다. mas 4.0.0 이상은 앱 설치에 root 권한이 필요해서 `mas install`이 관리자 비밀번호를 묻는다. 그래서 `run.sh`가 시작할 때 한 번만 인증을 받고 유지한다. 자세한 내용은 `run.sh.md`를 본다.
 
 ## Find what is installed now: `list_installed.sh`
 

@@ -14,6 +14,8 @@
 #
 # For every line it prints skip / installed / FAIL, like ../brew/install.sh.
 # Needs `mas`: it is installed by ../brew (essential.brewfile has brew "mas").
+# mas 4.0.0+ needs root to install apps, so it asks for the administrator password.
+# Use `bash run.sh`: it asks once at the start and keeps the sudo credentials alive.
 # Safe to re-run: what is installed is skipped.
 # To add a category: create masfile/<name>.mas. This script does not change.
 
@@ -53,7 +55,7 @@ install_category() {
             echo "    installed  $id $name"
             installed=$((installed + 1))
         else
-            warn "[$CURRENT] FAIL: $id $name (is the App Store signed in?)"
+            warn "[$CURRENT] FAIL: $id $name (App Store signed in? administrator password correct?)"
             failed=$((failed + 1))
         fi
     done < "$file"
