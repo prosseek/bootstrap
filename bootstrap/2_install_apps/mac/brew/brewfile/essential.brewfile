@@ -116,6 +116,9 @@ cask "orbstack" # Linux Virtual Machine
 ## Termainal
 cask "ghostty"
 
+## Mouse
+cask "bettertouchtool"
+
 ## Keyboard
 cask "espanso"
 cask "hammerspoon"   # Desktop automation application
