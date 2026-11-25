@@ -3,6 +3,9 @@
 # ~/github/prosseek/setup_mac/_readme.md
 # The App Store apps themselves are installed by ../mas.
 
+## Finder
+cask "default-folder-x"
+
 ## Browser
 cask "google-chrome"
 
