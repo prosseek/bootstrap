@@ -51,3 +51,20 @@ sudo apt install -y zstd
 curl -fsSL https://ollama.com/install.sh -o install.sh
 less install.sh      # 내용 확인 (선택)
 sh install.sh
+
+## For Notebook - prevent sleeping
+
+sudo mkdir -p /etc/systemd/logind.conf.d
+sudo tee /etc/systemd/logind.conf.d/server-mode.conf <<'EOF'
+[Login]
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+HandleLidSwitchDocked=ignore
+IdleAction=ignore
+EOF
+sudo systemctl restart systemd-logind
+
+### Light Off
+sudo apt install brightnessctl
+brightnessctl set 0                                   # 백라이트 끄기
+sudo sh -c 'TERM=linux setterm --blank force < /dev/tty1'
