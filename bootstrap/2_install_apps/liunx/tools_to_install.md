@@ -1,6 +1,22 @@
+# Basic
+
+sudo apt install git curl
+
+# Python
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+> installing to /home/smcho/.local/bin
+
+## PyTorch
+
+uv venv --python 3.12
+source .venv/bin/activate
+uv pip install torch torchvision torchaudio \
+  --index-url https://download.pytorch.org/whl/cpu
+
 # zsh
 sudo apt update
-sudo apt install zsh git curl
+sudo apt install zsh 
 
 ## Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
