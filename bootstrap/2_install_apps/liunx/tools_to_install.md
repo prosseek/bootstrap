@@ -1,6 +1,10 @@
+unset ZSH_ENV_DONE
+exec zsh
+
 # Basic
 
-sudo apt install git curl
+sudo apt install git curl vim
+sudo apt install fd-find fzf
 
 # Python
 
